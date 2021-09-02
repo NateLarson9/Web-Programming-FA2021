@@ -20,10 +20,9 @@ namespace CloudStorage.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<ImageEntity>> GetAsync()
+        public IAsyncEnumerable<ImageEntity> GetAsync()
         {
-            var results = (await imageTableStorage.GetAllImagesAsync()).Select(image => image.ToEntity());
-            return results;
+            return imageTableStorage.GetAllImagesAsync().Select(image => image.ToEntity());
         }
 
         [HttpGet("{id}")]
