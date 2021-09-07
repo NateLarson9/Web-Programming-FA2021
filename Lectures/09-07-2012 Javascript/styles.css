@@ -22,6 +22,12 @@ body {
 	color: white;
 	bottom: 20%;
 	right: 20%;
+	transition: bottom 2s, right 5s;
+}
+
+.fixedMove {
+	bottom: 60%;
+	right: 60%;
 }
 
 .blue {
