@@ -20,7 +20,7 @@ namespace CloudStorage.Services
 
         string GetDownloadUrl(ImageTableEntity image);
 
-        Task<List<ImageTableEntity>> GetAllImagesAsync();
+        IAsyncEnumerable<ImageTableEntity> GetAllImagesAsync();
 
         Task PurgeAsync();
     }

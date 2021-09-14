@@ -105,7 +105,7 @@ namespace CloudStorage.Services
             return blobContainerClient.GetBlockBlobClient(image.Id).Uri + "?" + sasToken;
         }
 
-        public async Task<List<ImageTableEntity>> GetAllImagesAsync()
+        public async IAsyncEnumerable<ImageTableEntity> GetAllImagesAsync()
         {
             var imageTableResults = new List<ImageTableEntity>();
 
@@ -120,10 +120,16 @@ namespace CloudStorage.Services
 
                 continuationToken = tableQueryResult.ContinuationToken;
 
+                foreach (var imageResult in tableQueryResult.Results)
+                {
+                    if (imageResult.UploadComplete)
+                    {
+                        yield return imageResult;
+                    }
+                }
+
                 imageTableResults.AddRange(tableQueryResult.Results.Where(result => result.UploadComplete));
             } while (continuationToken != null);
-
-            return imageTableResults;
         }
 
         public async Task PurgeAsync()

@@ -1,0 +1,47 @@
+body {
+	font-size: 3em;
+	color: gray;
+	background-color: skyblue;
+}
+
+.absolute {
+	position: absolute;
+	background-color: green;
+	color: white;
+	top: 20%;
+	left: 20%;
+	width: 50%;
+	height: 30%;
+	overflow: hidden;
+	font-size: 6vh;
+}
+
+.fixed {
+	position: fixed;
+	background-color: purple;
+	color: white;
+	bottom: 20%;
+	right: 20%;
+	transition: bottom 2s, right 5s;
+}
+
+.fixedMove {
+	bottom: 60%;
+	right: 60%;
+}
+
+.blue {
+	color: blue;
+}
+
+.green {
+	color: green;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+#firstElement {
+	color: orange;
+}
