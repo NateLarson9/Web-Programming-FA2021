@@ -1,0 +1,27 @@
+
+	GET  https://myawesomeserver.com/students  -  returns a list of all students
+	
+	GET  https://myawesomeserver.com/students/3  -  returns the details of student number 3
+
+	GET  https://myawesomeserver.com/students/3/addresses  -  returns the addresses of student number 3
+	
+	GET  https://myawesomeserver.com/students/3/addresses/1  -  returns the first address of student number 3
+
+	POST  https://myawesomeserver.com/students   -  create a new student
+	
+	DELETE  https://myawesomeserver.com/students/3   -  deletes (removes) student number 3
+	
+	PUT     https://myawesomeserver.com/students/3   -  replaces student number 3
+	
+	PATCH  https://myawesomeserver.com/students/3   -  update (but not necessarily replace) student number 3
+	
+	
+	Filtering
+	
+	GET   https://myawesomeserver.com/students?firstName=steven  -  returns a list of students with first name of steven
+	
+	GET   https://myawesomeserver.com/students?firstName=steven&lastName=yackel returns a list of students with first name steven, last name yackel
+	
+	GET   https://myawesomeserver.com/students/3/addresses/1?street=hanson  - return the addresse of student number 3 with a street of hanson
+	
+	
