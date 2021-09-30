@@ -1,12 +1,20 @@
-﻿@{
+﻿@model SpellsDatabase
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <ol>
 
-    @for(var i = 1; i <= 1000; i++)
+    @for(var i = 0; i < @Model.Count(); i++)
     {
-        <li>The item number was: @i</li>
+        <li>@Model.Get(i).Spell <a href="spells/viewSpell/@i">View Spell</a></li>
     }
 
 </ol>
+
+<form method="post" action="spells/add">
+    <input type="text" name="spellName" />
+
+    <input type="submit" value="Add New Spell" />
+</form>

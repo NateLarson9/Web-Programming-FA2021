@@ -1,0 +1,11 @@
+﻿@model SpellModel
+
+<h1>@Model.Spell</h1>
+
+
+<form method="post" action="/spells/delete">
+
+    <input type="hidden" name="spellIndex" value="@ViewData["id"]" />
+
+    <input type="submit" value="Delete spell?" />
+</form>
